@@ -6,8 +6,8 @@ use \Monolog\Handler\StreamHandler;
 use \Monolog\Handler\FirePHPHandler;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Headers', 'Content-Type');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers', 'Content-Type");
 require './vendor/autoload.php';
 
 
@@ -46,11 +46,7 @@ $app->post('/mail/', function ($request, $response, $args) {
     $requestobject = json_decode($requestbody);
     $email = $requestobject->mail->address;
     $content = $requestobject->mail->message;
-
     $content = sprintf("%s <br> <br> (%s)", $content, $email);
-    //$data = json_decode(key($data));
-    //$email = $data->mail->address;
-    //$content = $data->mail->message;
 
 
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
