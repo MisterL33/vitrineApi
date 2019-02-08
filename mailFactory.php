@@ -6,8 +6,7 @@ use \Monolog\Handler\StreamHandler;
 use \Monolog\Handler\FirePHPHandler;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers', 'Content-Type");
+
 require './vendor/autoload.php';
 
 
